@@ -51,3 +51,5 @@ The core differentiator of this architecture is the comprehensive macro-manageme
 *   **Frontend Layout:** Ensure a strict 12-column responsive layout restricted to `1320px` max container bounds.
 *   **Visual Assets:** Use 3D realistic illustration styling for cards instead of typical cartoon vectors.
 *   **Testimonial Guardrail:** Profile metrics and images must link to authenticated student profiles across Bangladesh.
+*   **Infrastructure:** Formulated and deployed end-to-end via Google AI Studio directly onto the Google Cloud Run environment.
+
