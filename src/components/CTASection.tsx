@@ -1,13 +1,17 @@
 import { motion } from 'motion/react';
 import { Sparkles, ArrowRight } from 'lucide-react';
+import { useLanding } from '../context/LandingContext';
 
 export default function CTASection() {
+  const { state } = useLanding();
+  const { ctaTitle, ctaSubtitle } = state;
+
   return (
-    <section id="get-started" className="py-20 sm:py-28 bg-white relative">
+    <section id="get-started" className="py-20 bg-[#f3f5fa] relative">
       <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
         
         <motion.div 
-          className="bg-gradient-to-r from-[#6C63FF] via-[#7B58FF] to-[#8B5CF6] rounded-[28px] sm:rounded-[36px] p-8 sm:p-16 lg:p-20 text-center relative overflow-hidden shadow-2xl shadow-[#6C63FF]/30"
+          className="bg-gradient-to-r from-[#6C4CF5] via-[#7B58FF] to-[#8B5CF6] rounded-[28px] sm:rounded-[36px] p-8 sm:p-16 lg:p-20 text-center relative overflow-hidden shadow-2xl shadow-[#6C4CF5]/20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -24,19 +28,19 @@ export default function CTASection() {
               <span>START YOUR JOURNEY TODAY</span>
             </div>
 
-            <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-[54px] text-white tracking-tight leading-[1.1]">
-              Ready to achieve your goals?
+            <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-[54px] text-white tracking-tight leading-tight">
+              {ctaTitle}
             </h2>
 
             <p className="text-purple-100 text-base sm:text-xl leading-relaxed max-w-[580px] mx-auto font-medium">
-              Join thousands of students learning smarter every day.
+              {ctaSubtitle}
             </p>
 
             {/* CTA Buttons */}
             <div className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5">
               <motion.a
                 href="#signup"
-                className="w-full sm:w-auto h-[56px] px-8 rounded-[16px] bg-white text-[#6C63FF] font-extrabold text-base flex items-center justify-center gap-2 shadow-xl hover:bg-purple-50 transition-all"
+                className="w-full sm:w-auto h-[56px] px-8 rounded-2xl bg-white text-[#6C4CF5] font-extrabold text-base flex items-center justify-center gap-2 shadow-xl hover:bg-purple-50 transition-all"
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -46,7 +50,7 @@ export default function CTASection() {
 
               <motion.a
                 href="#login"
-                className="w-full sm:w-auto h-[56px] px-8 rounded-[16px] bg-transparent text-white border-2 border-white/40 hover:border-white font-bold text-base flex items-center justify-center gap-2 transition-all"
+                className="w-full sm:w-auto h-[56px] px-8 rounded-2xl bg-transparent text-white border-2 border-white/40 hover:border-white font-bold text-base flex items-center justify-center gap-2 transition-all"
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -60,7 +64,6 @@ export default function CTASection() {
 
           </div>
         </motion.div>
-
       </div>
     </section>
   );
